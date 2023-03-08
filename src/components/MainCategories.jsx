@@ -8,7 +8,7 @@ import { IoIosArrowForward } from 'react-icons/io'
 
 export default function MainCategories() {
   return (
-    <div className='w-[70%] h-[300px] mx-auto flex items-center justify-around text-sm font-bold mt-5'>
+    <div className='w-[70%] h-[300px] mx-auto flex items-center justify-between text-sm font-bold mt-5'>
         <div className='flex flex-col items-center bg-[#f1f1f1] w-[350px]'>
             <img src={Headphones} className='w-[200px]' />
             <p>HEADPHONES</p>

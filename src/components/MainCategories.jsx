@@ -1,7 +1,7 @@
 import React from 'react'
-import Headphones from '../assets/shared/desktop/image-category-thumbnail-headphones.png';
-import Speakers from '../assets/shared/desktop/image-category-thumbnail-speakers.png';
-import Earphones from '../assets/shared/desktop/image-category-thumbnail-earphones.png';
+import Headphones from './assets/shared/desktop/image-category-thumbnail-headphones.png';
+import Speakers from './assets/shared/desktop/image-category-thumbnail-speakers.png';
+import Earphones from './assets/shared/desktop/image-category-thumbnail-earphones.png';
 import { IoIosArrowForward } from 'react-icons/io'
 
 
@@ -13,7 +13,7 @@ export default function MainCategories() {
             <img src={Headphones} className='w-[200px]' />
             <p>HEADPHONES</p>
             <div className='flex items-center gap-1 mt-2'>
-                <p className='text-xs opacity-50 tracking-wider'>SHOP</p>
+                <p className='text-xs opacity-50 tracking-wider hover:text-[#D87D4A] cursor-pointer'>SHOP</p>
                 <IoIosArrowForward className='text-[#D87D4A]' />
             </div>
         </div>
@@ -21,7 +21,7 @@ export default function MainCategories() {
             <img src={Speakers} className='w-[200px]' />
             <p>SPEAKERS</p>
             <div className='flex items-center gap-1 mt-2'>
-                <p className='text-xs opacity-50 tracking-wider'>SHOP</p>
+                <p className='text-xs opacity-50 tracking-wider hover:text-[#D87D4A] cursor-pointer'>SHOP</p>
                 <IoIosArrowForward className='text-[#D87D4A]' />
             </div>
         </div>
@@ -29,7 +29,7 @@ export default function MainCategories() {
             <img src={Earphones} className='w-[200px]' />
             <p>EARPHONES</p>
             <div className='flex items-center gap-1 mt-2'>
-                <p className='text-xs opacity-50 tracking-wider'>SHOP</p>
+                <p className='text-xs opacity-50 tracking-wider hover:text-[#D87D4A] cursor-pointer'>SHOP</p>
                 <IoIosArrowForward className='text-[#D87D4A]' />
             </div>
         </div>

@@ -18,14 +18,17 @@ export default function ProductDetails({data, cart, setCart}) {
     setCount(prevCount => Math.max(prevCount + 1, 1));
   }
 
+
   const decreaseQuantity = () => {
     setCount(prevCount => Math.max(prevCount - 1, 1));
   }
 
+  console.log(otherProducts)
+
   useEffect(() => {
     const findProduct = async () => {
       const filterProduct = await data.filter(product => product.category === category);
-      const currentItem = await filterProduct.find(product => product.name === name);
+      const currentItem = await filterProduct.find(product => product.slug === name);
       setCurrentProduct(currentItem);
     };
     findProduct();
@@ -39,28 +42,33 @@ export default function ProductDetails({data, cart, setCart}) {
     setOtherProducts(currentProduct.others)
   }, [currentProduct])
 
+  console.log(cart)
+
   const product = {
-    name: currentProduct.name,
-    price: currentProduct.price * count,
+    name: currentProduct && currentProduct.name,
+    price: currentProduct.price,
     quantity: count,
     image: currentProduct.image && currentProduct.image.desktop
   }
 
-  const addProduct = (item) => {
-    // Check if the product is already in the cart
-    const productInCart = cart.find(
-      cartItem => cartItem.name === product.name && 
-                  cartItem.price === product.price &&
+  const addProduct = () => {
+    const product = {
+      name: currentProduct && currentProduct.name,
+      price: currentProduct.price * count,
+      quantity: count,
+      image: currentProduct.image && currentProduct.image.desktop
+    };
+  
+    const existingCartItem = cart.find(
+      cartItem => cartItem.name === product.name &&
+                   // check for total price instead of unit price
                   cartItem.image === product.image
     );
   
-    if (productInCart) {
-      // If the product is already in the cart, update its quantity
+    if (existingCartItem) {
       const updatedCart = cart.map(cartItem => {
-        if (cartItem.name === product.name &&
-            cartItem.price === product.price &&
-            cartItem.image === product.image) {
-          return { ...cartItem, quantity: cartItem.quantity + product.quantity };
+        if (cartItem === existingCartItem) {
+          return {  ...cartItem, quantity: cartItem.quantity + count, price: currentProduct.price * (cartItem.quantity + count) };
         } else {
           return cartItem;
         }
@@ -69,15 +77,13 @@ export default function ProductDetails({data, cart, setCart}) {
       setCart(updatedCart);
       localStorage.setItem('cart', JSON.stringify(updatedCart));
     } else {
-      // If the product is not in the cart, add it
       setCart(prevCart => [...prevCart, product]);
+      localStorage.setItem('cart', JSON.stringify([...cart, product]));
     }
   };
-
-
-
-
-
+  
+  
+  
   
 
 
@@ -149,6 +155,9 @@ export default function ProductDetails({data, cart, setCart}) {
                 <Other
                     name={product.name}
                     image={product.image.desktop}
+                    category={product.category}
+                    slug={product.slug}
+                    
                 />
             ))}
         </div>

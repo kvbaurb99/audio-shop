@@ -6,10 +6,10 @@ import HeadphonesProducts from './HeadphonesProducts'
 import MainCategories from './MainCategories'
 
 
-export default function Headphones({data}) {
+export default function Headphones({data, cart, setCart}) {
   return (
     <div className='w-full'>
-        <HeadphonesHero />
+        <HeadphonesHero cart={cart} setCart={setCart} />
         <HeadphonesProducts data={data} />
         <MainCategories />
         <About />

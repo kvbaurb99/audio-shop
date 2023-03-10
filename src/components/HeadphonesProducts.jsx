@@ -13,16 +13,24 @@ export default function HeadphonesProducts({data}) {
       setHeadphones(filteredProducts);
     }, [data]);
 
+    useEffect(() => {
+      const formContainer = document.querySelector('.product');
+      formContainer.classList.add('product-slide');
+      
+    }, []);
+
+
 
 
   return (
-    <div className='w-[60%] mx-auto'>
+    <div className='w-[60%] mx-auto product'>
         {headphones.map(product => (
           <XX99M1
             key={product.name}
             name={product.name}
             description={product.description}
             image={product.image.desktop}
+            category={product.category}
           />
         ))}
     </div>

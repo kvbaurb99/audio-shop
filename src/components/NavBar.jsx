@@ -19,7 +19,7 @@ export default function NavBar({cart, setCart}) {
   }, [location]);
 
   return (
-    <div className='w-full mx-auto h-[100px] text-white flex justify-around items-center border-b border-[#979797] bg-[#141414]'>
+    <div className='w-full mx-auto h-[100px] text-white flex justify-around items-center border-b border-[#979797]/30 bg-[#141414]'>
         <div>
             <Link to='/'><p className='font-bold text-2xl hover:animate-pulse hover:text-[#D87D4A]'>audiophile</p></Link>
         </div>

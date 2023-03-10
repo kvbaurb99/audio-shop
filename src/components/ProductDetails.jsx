@@ -6,6 +6,7 @@ import Includes from './Includes';
 import MainCategories from './MainCategories';
 import NavBar from './NavBar';
 import Other from './Other';
+import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 
 export default function ProductDetails({data, cart, setCart}) {
   const [currentProduct, setCurrentProduct] = useState({});
@@ -13,6 +14,11 @@ export default function ProductDetails({data, cart, setCart}) {
   const [otherProducts, setOtherProducts] = useState([])
   const [count, setCount] = useState(1)
   const { name, category } = useParams();
+  const [loading, setLoading] = useState(true);
+
+  const handleImageLoad = () => {
+    setLoading(false);
+  };
 
   const increaseQuantity = () => {
     setCount(prevCount => Math.max(prevCount + 1, 1));
@@ -54,7 +60,7 @@ export default function ProductDetails({data, cart, setCart}) {
   const addProduct = () => {
     const product = {
       name: currentProduct && currentProduct.name,
-      price: currentProduct.price * count,
+      price: currentProduct.price,
       quantity: count,
       image: currentProduct.image && currentProduct.image.desktop
     };
@@ -68,17 +74,15 @@ export default function ProductDetails({data, cart, setCart}) {
     if (existingCartItem) {
       const updatedCart = cart.map(cartItem => {
         if (cartItem === existingCartItem) {
-          return {  ...cartItem, quantity: cartItem.quantity + count, price: currentProduct.price * (cartItem.quantity + count) };
+          return {  ...cartItem, quantity: cartItem.quantity + count };
         } else {
           return cartItem;
         }
       });
   
       setCart(updatedCart);
-      localStorage.setItem('cart', JSON.stringify(updatedCart));
     } else {
       setCart(prevCart => [...prevCart, product]);
-      localStorage.setItem('cart', JSON.stringify([...cart, product]));
     }
   };
   
@@ -91,9 +95,10 @@ export default function ProductDetails({data, cart, setCart}) {
     <div className='w-full'>
       <NavBar cart={cart} setCart={setCart} />
       <div className='w-[65%] mx-auto flex justify-around gap-10'>
+        
         <div>
           {currentProduct.image && (
-            <img src={require(`${currentProduct.image.desktop}`)} className='w-[500px]' alt={currentProduct.name} />
+            <img onLoad={handleImageLoad} src={require(`${currentProduct.image.desktop}`)} className='w-[500px]' alt={currentProduct.name} />
           )}
         </div>
         <div className='w-[500px] flex h-[500px] justify-center flex-col'>

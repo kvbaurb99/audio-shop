@@ -60,10 +60,68 @@ body {
   }
 }
 
+@keyframes hero-photo {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  } to {
+    transform: translateX(0%);
+    opacity: 0.8;
+  }    
+}
+
+@keyframes main-fade {
+  from {
+    opacity: 0;
+  } to {
+    opacity: 100;
+  }
+  
+}
+
+@keyframes slide-right {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  } to {
+    transform: translateX(0%);
+    opacity: 100;
+  }
+}
+
+
+@keyframes cart-open {
+  from {
+    opacity: 0;
+  } to {
+    opacity: 100;
+  }
+}
+
 .slide-from-left {
-  animation: slide-from-left 2s ease-in-out;
+  animation: slide-from-left 1s ease-in-out;
+}
+
+.main-fade {
+  animation: main-fade 2s ease-in-out;
+}
+
+.main-right {
+  animation: ;
 }
 
 .product-slide {
   animation: product-slide 2s ease-in-out;
+}
+
+.slide-right {
+  animation: slide-right 2s ease-in-out;
+}
+
+.cart-open {
+  animation: cart-open 500ms ease-in-out;
+}
+
+.hero-photo {
+  animation: hero-photo 2s ease-in-out;
 }

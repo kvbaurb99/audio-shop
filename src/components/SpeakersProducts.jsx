@@ -14,16 +14,21 @@ export default function SpeakersProducts({data}) {
       setSpeakers(filteredProducts);
     }, [data]);
 
-    console.log(speakers)
+    useEffect(() => {
+      const formContainer = document.querySelector('.product');
+      formContainer.classList.add('product-slide');
+      
+    }, []);
 
   return (
-    <div className='w-[60%] mx-auto'>
+    <div className='w-[60%] mx-auto product'>
     {speakers.map(product => (
       <SpeakerProduct
         key={product.name}
         name={product.name}
         description={product.description}
         image={product.image.desktop}
+        category={product.category}
       />
     ))}
 </div>

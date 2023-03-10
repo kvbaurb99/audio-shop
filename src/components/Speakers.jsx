@@ -5,10 +5,10 @@ import MainCategories from './MainCategories'
 import SpeakersHero from './SpeakersHero'
 import SpeakersProducts from './SpeakersProducts'
 
-export default function Speakers({data}) {
+export default function Speakers({data, cart, setCart}) {
   return (
     <div className='w-full'>
-        <SpeakersHero />
+        <SpeakersHero cart={cart} setCart={setCart} />
         <SpeakersProducts data={data} />
         <MainCategories />
         <About />

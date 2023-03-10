@@ -13,7 +13,7 @@ export default function Checkout({cart}) {
     const [zip, setZip] = useState()
     const [city, setCity] = useState('')
 
-    const total = cart.reduce((accumulator, product) => accumulator + product.price, 0);
+    const total = cart.reduce((accumulator, product) => accumulator + product.price * product.quantity, 0);
     const formatted = total.toLocaleString()
     const vatPrice = (total * 23) / 100
     const shipPrice = 50;
@@ -100,7 +100,7 @@ export default function Checkout({cart}) {
                         </div>            
                     </div>
                     <div className='mt-[8%] w-full justify-start flex'>
-                        <button type='button' onClick={fillForm} className='bg-[#D87D4A] py-3 px-2 text-sm w-[49%] text-white'>Fill with example address</button>
+                        <button type='button' onClick={fillForm} className='bg-[#D87D4A] py-3 px-2 text-sm w-[49%] text-white tracking-wider'>FILL WITH EXAMPLE ADDRESS</button>
                     </div>
                 </form>
             </div>
@@ -133,7 +133,7 @@ export default function Checkout({cart}) {
                         <p className='text-black/50'>GRAND TOTAL</p>
                         { total <= 0 ? null : <p className='font-bold text-lg text-[#D87D4A]'>$ {total + shipPrice}</p>}
                     </div>
-                    <button className='bg-[#D87D4A] text-white w-full py-3 text-sm mt-6'>CONTINUE & PAY</button>
+                    <button className='bg-[#D87D4A] text-white w-full py-3 text-sm mt-6 tracking-wider'>CONTINUE & PAY</button>
                 </div>
             </div>
         </div>

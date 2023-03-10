@@ -1,8 +1,38 @@
 import React from 'react'
+import { useState } from 'react';
 
-export default function CartItem({name, price, image, quantity}) {
-
-    
+export default function CartItem({ name, price, image, quantity, setCart }) {
+    const [itemQuantity, setItemQuantity] = useState(quantity);
+  
+    const handleDecreaseQuantity = () => {
+      if (itemQuantity > 1) {
+        setItemQuantity(itemQuantity - 1);
+        updateCart(itemQuantity - 1);
+      }
+    };
+  
+    const handleIncreaseQuantity = () => {
+      setItemQuantity(itemQuantity + 1);
+      updateCart(itemQuantity + 1);
+    };
+  
+    const updateCart = (newQuantity) => {
+        const updatedCart = [...JSON.parse(localStorage.getItem('cart'))];
+        const existingCartItemIndex = updatedCart.findIndex(
+          (cartItem) =>
+            cartItem.name === name && cartItem.price === price && cartItem.image === image
+        );
+        if (existingCartItemIndex >= 0) {
+          updatedCart[existingCartItemIndex] = {
+            name: name,
+            price: price,
+            quantity: newQuantity,
+            image: image,
+          };
+        }
+        localStorage.setItem('cart', JSON.stringify(updatedCart));
+        setCart(updatedCart);
+      };
 
   return (
     <div className='flex justify-between items-center mt-4'>
@@ -14,9 +44,9 @@ export default function CartItem({name, price, image, quantity}) {
             <p className='text-sm text-black/50 mt-2 font-bold'>$ {price}</p>
         </div>
         <div className='flex gap-5 items-center'>
-            <p className='bg-[#f1f1f1] cursor-pointer'>-</p>
+            <p onClick={handleDecreaseQuantity} className='bg-[#f1f1f1] cursor-pointer'>-</p>
             <p className='font-bold text-sm'>{quantity}</p>
-            <p className='bg-[#f1f1f1] cursor-pointer'>+</p>
+            <p onClick={handleIncreaseQuantity} className='bg-[#f1f1f1] cursor-pointer'>+</p>
         </div>
     </div>
   )

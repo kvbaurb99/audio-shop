@@ -2,8 +2,10 @@ import React from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import CartItem from './CartItem';
 import { useEffect } from 'react';
+import { useState } from 'react';
 
 export default function Cart({setShowCart, cart, setCart}) {
+
 
     useEffect(() => {
         const formContainer = document.querySelector('.cart');
@@ -23,7 +25,7 @@ export default function Cart({setShowCart, cart, setCart}) {
         setCart([])
       }
 
-      const total = cart.reduce((accumulator, product) => accumulator + product.price, 0);
+      const total = cart.reduce((accumulator, product) => accumulator + product.price * product.quantity, 0);
       const formatted = total.toLocaleString()
 
 
@@ -41,6 +43,7 @@ export default function Cart({setShowCart, cart, setCart}) {
                         price={product.price}
                         image={product.image}
                         quantity={product.quantity}
+                        setCart={setCart}
                     />
                 ))}
             </div>

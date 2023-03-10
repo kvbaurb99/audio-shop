@@ -5,10 +5,10 @@ import Hero from './Hero'
 import MainInfo from './MainInfo'
 import Footer from './Footer'
 
-export default function Home() {
+export default function Home({cart, setCart}) {
   return (
     <div className='w-full overflow-hidden scroll-smooth'>
-      <Hero />
+      <Hero cart={cart} setCart={setCart} />
       <MainCategories />
       <MainInfo />
       <About />

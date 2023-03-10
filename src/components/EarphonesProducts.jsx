@@ -29,6 +29,7 @@ export default function EarphonesProducts({data}) {
         description={product.description}
         image={product.image.desktop}
         category={product.category}
+        slug={product.slug}
       />
     ))}
     </div>  

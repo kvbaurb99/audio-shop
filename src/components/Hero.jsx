@@ -8,5 +8,6 @@ export default function Hero({cart, setCart}) {
         <NavBar cart={cart} setCart={setCart} />
         <HeroInfo />
     </div>
+    
   )
 }

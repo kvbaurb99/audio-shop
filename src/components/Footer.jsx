@@ -1,8 +1,15 @@
 import React from 'react'
-import { AiFillGithub } from 'react-icons/ai'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
+import { useEffect } from 'react';
 
 export default function Footer() {
+
+    const location = useLocation()
+
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top of page
+      }, [location]);
+
   return (
     <div className='w-full h-[360px] bg-[#141414] mt-[10%] text-white relative'>
         <div className='h-full flex flex-col justify-center ml-[15%]'>
@@ -14,8 +21,8 @@ export default function Footer() {
                     <ul className='flex text-sm gap-7 tracking-wider'>
                         <Link to='/'><li className='hover:text-[#D87D4A] cursor-pointer'>HOME</li></Link>
                         <Link to ='/categories/headphones'><li className='hover:text-[#D87D4A] cursor-pointer'>HEADPHONES</li></Link>
-                        <li className='hover:text-[#D87D4A] cursor-pointer'>SPEAKERS</li>
-                        <li className='hover:text-[#D87D4A] cursor-pointer'>EARPHONES</li>
+                        <Link to='/categories/speakers'><li className='hover:text-[#D87D4A] cursor-pointer'>SPEAKERS</li></Link>
+                        <Link to='/categories/earphones'><li className='hover:text-[#D87D4A] cursor-pointer'>EARPHONES</li></Link>
                     </ul>
                 </div>
             </div>

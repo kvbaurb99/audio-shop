@@ -1,8 +1,15 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import CartItem from './CartItem';
+import { useEffect } from 'react';
 
 export default function Cart({setShowCart, cart, setCart}) {
+
+    useEffect(() => {
+        const formContainer = document.querySelector('.cart');
+        formContainer.classList.add('cart-open');
+        
+      }, []);
 
     const handleCartClick = (e) => {
         e.stopPropagation();
@@ -21,7 +28,7 @@ export default function Cart({setShowCart, cart, setCart}) {
 
 
   return (
-    <div className='fixed w-full h-full z-50 top-0 left-0 bg-[#979797]/50' onClick={handleClick}>
+    <div className='fixed w-full h-full z-50 top-0 left-0 bg-[#979797]/50 cart' onClick={handleClick}>
         <div className='w-[380px] h-[490px] bg-white fixed top-[15%] right-[15%] rounded-lg text-black flex flex-col justify-between z-100' onClick={handleCartClick}>
             <div className='w-full flex justify-around items-center mt-5'>
                 <p className='text-xl font-bold tracking-wider'>CART ({cart.length})</p>

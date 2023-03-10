@@ -15,7 +15,14 @@ import { useEffect } from "react";
 
 function App() {
 
-  const [cart, setCart] = useState([])
+  const [cart, setCart] = useState(
+    JSON.parse(localStorage.getItem('cart')) || []
+  );
+
+  // Save the cart to local storage whenever it changes
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }, [cart]);
 
 
 

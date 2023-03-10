@@ -1,10 +1,17 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import CheckoutItem from './CheckoutItem'
 import Footer from './Footer'
 import NavBar from './NavBar'
 
 export default function Checkout({cart}) {
+
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [phone, setPhone] = useState()
+    const [address, setAddress] = useState('')
+    const [zip, setZip] = useState()
+    const [city, setCity] = useState('')
 
     const total = cart.reduce((accumulator, product) => accumulator + product.price, 0);
     const formatted = total.toLocaleString()
@@ -18,6 +25,15 @@ export default function Checkout({cart}) {
         }
     }, [])
 
+    const fillForm = () => {
+        setName('John')
+        setEmail('john@gmail.com')
+        setPhone(145234635)
+        setAddress('123 Main Street')
+        setZip(34100)
+        setCity('London')
+    }
+
   return (
     <div className='w-full bg-[#f2f2f2]'>
         <NavBar cart={cart} />
@@ -29,30 +45,30 @@ export default function Checkout({cart}) {
                     <div className='flex gap-[15px] justify-start w-full flex-wrap'>
                         <div className='flex flex-col w-[49%]'>
                             <label htmlFor="name" className='font-bold text-sm'>Name</label>
-                            <input type="text" name="" id="name" className='py-3 rounded-lg mt-1 border px-4 border-[#cfcfcf] outline-none' placeholder='Enter your name...' />
+                            <input type="text" name="" id="name" className='py-3 rounded-lg mt-1 border px-4 border-[#cfcfcf] outline-none' placeholder='Enter your name...' value={name} onChange={(e) => setName(e.target.value)} />
                         </div>
                         <div className='flex flex-col w-[49%]'>
                             <label htmlFor="email" className='font-bold text-sm'>Email Address</label>
-                            <input type="email" name="email" id="email" className='py-3 rounded-lg mt-1 border px-4 border-[#cfcfcf] outline-none' placeholder='Enter your email...' />
+                            <input type="email" name="email" id="email" className='py-3 rounded-lg mt-1 border px-4 border-[#cfcfcf] outline-none' placeholder='Enter your email...' value={email} onChange={(e) => setEmail(e.target.value)} />
                         </div>
                         <div className='flex flex-col w-[49%]'>
                             <label htmlFor="phone" className='font-bold text-sm'>Phone Number</label>
-                            <input type="tel" name="phone" id="phone" className='py-3 rounded-lg mt-1 border px-4 border-[#cfcfcf] outline-none' placeholder='Enter your number...' />
+                            <input type="tel" name="phone" id="phone" className='py-3 rounded-lg mt-1 border px-4 border-[#cfcfcf] outline-none' placeholder='Enter your number...' value={phone} onChange={(e) => setPhone(e.target.value)} />
                         </div>
                     </div>
                     <p className='mt-6 text-sm text-[#D87D4A] tracking-wider font-bold'>SHIPPING INFO</p>
                     <div className='flex gap-[15px] justify-start w-full flex-wrap'>
                         <div className='flex flex-col w-full mt-4'>
                             <label htmlFor="address" className='font-bold text-sm'>Address</label>
-                            <input type="text" name="address" id="address" className='py-3 rounded-lg mt-1 border w-full px-4 border-[#cfcfcf] outline-none' placeholder='Enter your address...' />
+                            <input type="text" name="address" id="address" className='py-3 rounded-lg mt-1 border w-full px-4 border-[#cfcfcf] outline-none' placeholder='Enter your address...' value={address} onChange={(e) => setAddress(e.target.value)} />
                         </div>
                         <div className='flex flex-col w-[49%]'>
                             <label htmlFor="zip" className='font-bold text-sm'>ZIP Code</label>
-                            <input type="text" name="zip" id="zip" className='py-3 rounded-lg mt-1 border px-4 border-[#cfcfcf] outline-none' placeholder='Enter your zip-code...' />
+                            <input type="text" name="zip" id="zip" className='py-3 rounded-lg mt-1 border px-4 border-[#cfcfcf] outline-none' placeholder='Enter your zip-code...' value={zip} onChange={(e) => setZip(e.target.value)} />
                         </div>
                         <div className='flex flex-col w-[49%]'>
                             <label htmlFor="city" className='font-bold text-sm'>City</label>
-                            <input type="text" name="city" id="city" className='py-3 rounded-lg mt-1 border px-4 border-[#cfcfcf] outline-none' placeholder='Enter your city...' />
+                            <input type="text" name="city" id="city" className='py-3 rounded-lg mt-1 border px-4 border-[#cfcfcf] outline-none' placeholder='Enter your city...' value={city} onChange={(e) => setCity(e.target.value)} />
                         </div>
                     </div>
                     <p className='mt-6 text-sm text-[#D87D4A] tracking-wider font-bold'>PAYMENT DETAILS</p>
@@ -82,6 +98,9 @@ export default function Checkout({cart}) {
                             <label htmlFor="city" className='font-bold text-sm'>e-Money PIN</label>
                             <input type="text" name="city" id="city" className='py-3 rounded-lg mt-1 border px-4 border-[#cfcfcf] outline-none' />
                         </div>            
+                    </div>
+                    <div className='mt-[8%] w-full justify-start flex'>
+                        <button type='button' onClick={fillForm} className='bg-[#D87D4A] py-3 px-2 text-sm w-[49%] text-white'>Fill with example address</button>
                     </div>
                 </form>
             </div>

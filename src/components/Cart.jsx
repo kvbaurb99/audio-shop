@@ -30,7 +30,7 @@ export default function Cart({setShowCart, cart, setCart}) {
 
 
   return (
-    <div className='fixed w-full h-full z-50 top-0 left-0 bg-[#979797]/50 cart' onClick={handleClick}>
+    <div className='fixed w-full h-full z-50 top-0 left-0 bg-[#979797]/60 cart' onClick={handleClick}>
         <div className='w-[380px] h-[490px] bg-white fixed top-[15%] right-[15%] rounded-lg text-black flex flex-col justify-between z-100' onClick={handleCartClick}>
             <div className='w-full flex justify-around items-center mt-5'>
                 <p className='text-xl font-bold tracking-wider'>CART ({cart.length})</p>

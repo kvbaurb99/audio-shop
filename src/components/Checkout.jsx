@@ -26,7 +26,7 @@ export default function Checkout({cart, setCart}) {
         if (cart.length <= 0) {
             navigate('/')
         }
-    }, [])
+    }, [cart, navigate])
 
     const fillForm = () => {
         setName('John')
@@ -112,7 +112,7 @@ export default function Checkout({cart, setCart}) {
                     null
                     }
                     <div className='mt-[8%] w-full justify-start flex'>
-                        <button type='button' onClick={fillForm} className='bg-[#D87D4A] py-3 px-2 text-sm w-[49%] text-white tracking-wider'>FILL WITH EXAMPLE ADDRESS</button>
+                        <button type='button' onClick={fillForm} className='bg-[#D87D4A] py-3 px-2 text-sm w-[49%] text-white tracking-wider hover:bg-[#FBAF85] duration-700'>FILL WITH EXAMPLE ADDRESS</button>
                     </div>
                 </div>
             </div>
@@ -145,7 +145,7 @@ export default function Checkout({cart, setCart}) {
                         <p className='text-black/50'>GRAND TOTAL</p>
                         { total <= 0 ? null : <p className='font-bold text-lg text-[#D87D4A]'>$ {total + shipPrice}</p>}
                     </div>
-                    <button type='submit' className='bg-[#D87D4A] text-white w-full py-3 text-sm mt-6 tracking-wider'>CONTINUE & PAY</button>
+                    <button type='submit' className='bg-[#D87D4A] text-white w-full py-3 text-sm mt-6 tracking-wider hover:bg-[#FBAF85] duration-700'>CONTINUE & PAY</button>
                 </div>
             </div>
         </form>

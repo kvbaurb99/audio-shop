@@ -1,8 +1,7 @@
 import React from 'react'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import CartItem from './CartItem';
 import { useEffect } from 'react';
-import { useState } from 'react';
 
 export default function Cart({setShowCart, cart, setCart}) {
 

@@ -6,7 +6,6 @@ import Includes from './Includes';
 import MainCategories from './MainCategories';
 import NavBar from './NavBar';
 import Other from './Other';
-import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 
 export default function ProductDetails({data, cart, setCart}) {
   const [currentProduct, setCurrentProduct] = useState({});
@@ -14,11 +13,7 @@ export default function ProductDetails({data, cart, setCart}) {
   const [otherProducts, setOtherProducts] = useState([])
   const [count, setCount] = useState(1)
   const { name, category } = useParams();
-  const [loading, setLoading] = useState(true);
 
-  const handleImageLoad = () => {
-    setLoading(false);
-  };
 
   const increaseQuantity = () => {
     setCount(prevCount => Math.max(prevCount + 1, 1));
@@ -96,12 +91,12 @@ export default function ProductDetails({data, cart, setCart}) {
         
         <div>
           {currentProduct.image && (
-            <img onLoad={handleImageLoad} src={require(`${currentProduct.image.desktop}`)} className='w-[500px]' alt={currentProduct.name} />
+            <img src={require(`${currentProduct.image.desktop}`)} className='w-[500px]' alt={currentProduct.name} />
           )}
         </div>
         <div className='w-[500px] flex h-[500px] justify-center flex-col'>
             <p className='text-5xl tracking-wider font-bold w-[400px]'>{currentProduct.name}</p>
-            <p className='w-[450px] text-black/50 text-sm mt-4'>{currentProduct.description}</p>
+            <p className='w-[450px] text-black/50 text-sm mt-4 tracking-wide'>{currentProduct.description}</p>
             <p className='mt-4 text-lg font-bold'>$ {currentProduct.price}</p>
             <div className='flex justify-around mt-8 items-center'>
                 <div>
@@ -112,7 +107,7 @@ export default function ProductDetails({data, cart, setCart}) {
                     </ul>
                 </div>
                 <div>
-                    <button onClick={() => addProduct(product)} className='bg-[#D87D4A] text-white text-xs px-7 py-3'>ADD TO CART</button>
+                    <button onClick={() => addProduct(product)} className='bg-[#D87D4A] text-white text-xs px-7 py-3 hover:bg-[#FBAF85]  duration-700'>ADD TO CART</button>
                 </div>
             </div>
         </div>
@@ -120,7 +115,7 @@ export default function ProductDetails({data, cart, setCart}) {
       <div className='flex w-[65%] mx-auto justify-around'>
         <div className='w-[50%]'>
             <p className='text-3xl font-bold tracking-wider'>FEATURES</p>
-            <p className='text-black/50 text-sm leading-[1.6] mt-4'>{currentProduct.features}</p>
+            <p className='text-black/50 text-sm leading-[1.6] mt-4 tracking-wide'>{currentProduct.features}</p>
         </div>
         <div>
             <p className='text-3xl font-bold tracking-wider'>IN THE BOX</p>

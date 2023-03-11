@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useEffect } from 'react'
 import { AiOutlineCheck } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
 
 export default function OrderSummary({cart, total, setCart, orderCompleted}) {
 
-    const [firstProduct, setFirstProduct] = useState(cart[0])
+    const firstProduct = cart[0]
 
     useEffect(() => {
         const formContainer = document.querySelector('.summary');

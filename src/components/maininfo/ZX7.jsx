@@ -8,7 +8,7 @@ export default function ZX7() {
         <img src={Speaker} className='w-full h-[300px] rounded-lg' />
         <div className='absolute top-1/2 left-[10%] flex flex-col'>
             <p className='text-3xl font-bold'>ZX7 SPEAKER</p>
-            <Link to='/speakers/zx7-speaker'><button className='border border-black border-solid text-xs py-3 px-4 mt-4 font-bold hover:bg-black hover:text-white'>SEE PRODUCT</button></Link>
+            <Link to='/speakers/zx7-speaker'><button className='border border-black border-solid text-xs py-3 px-4 mt-4 font-bold hover:bg-black hover:text-white duration-700'>SEE PRODUCT</button></Link>
         </div>
     </div>
   )

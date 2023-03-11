@@ -13,7 +13,7 @@ export default function ZX9() {
         <p className='text-5xl font-bold tracking-wider'>ZX9</p>
         <p className='text-5xl font-bold tracking-wider'>SPEAKER</p>
         <p className='text-white/75 text-sm w-[320px] mt-4 tracking-wide'>Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
-        <Link to='/speakers/zx9-speaker'><button className='mt-6 bg-black px-7 py-3 text-sm tracking-wide hover:bg-[#4C4C4C]'>SEE PRODUCT</button></Link>
+        <Link to='/speakers/zx9-speaker'><button className='mt-6 bg-black px-7 py-3 text-sm tracking-wide hover:bg-[#4C4C4C] duration-700'>SEE PRODUCT</button></Link>
     </div>
 </div>
   )

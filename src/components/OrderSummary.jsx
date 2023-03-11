@@ -1,17 +1,22 @@
 import React, { useState } from 'react'
+import { useEffect } from 'react'
 import { AiOutlineCheck } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
 
-export default function OrderSummary({cart, total, setCart}) {
+export default function OrderSummary({cart, total, setCart, orderCompleted}) {
 
     const [firstProduct, setFirstProduct] = useState(cart[0])
 
-    console.log(firstProduct)
+    useEffect(() => {
+        const formContainer = document.querySelector('.summary');
+        formContainer.classList.add('display-summary');
+        
+      }, [orderCompleted]);
 
 
   return (
     <div className='w-full h-full fixed bg-[#979797]/60 top-0 left-0 flex justify-center items-center'>
-        <div className='bg-white rounded-lg w-[28%] h-[60%] p-[3%]'>
+        <div className='bg-white rounded-lg w-[28%] h-[60%] p-[3%] summary'>
             <div className='w-[60px] h-[60px] bg-[#D87D4A] rounded-full flex justify-center items-center'>
                 <AiOutlineCheck className='text-3xl text-white' />
             </div>

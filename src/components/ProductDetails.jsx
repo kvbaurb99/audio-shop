@@ -29,7 +29,6 @@ export default function ProductDetails({data, cart, setCart}) {
     setCount(prevCount => Math.max(prevCount - 1, 1));
   }
 
-  console.log(otherProducts)
 
   useEffect(() => {
     const findProduct = async () => {
@@ -48,7 +47,6 @@ export default function ProductDetails({data, cart, setCart}) {
     setOtherProducts(currentProduct.others)
   }, [currentProduct])
 
-  console.log(cart)
 
   const product = {
     name: currentProduct && currentProduct.name,
@@ -129,6 +127,7 @@ export default function ProductDetails({data, cart, setCart}) {
             <div className='flex flex-col mt-4'>
             {productInclude && productInclude.map(product => (
                 <Includes
+                 key={product.item} 
                  quantity={product.quantity}
                  item={product.item}
                  />
@@ -158,6 +157,7 @@ export default function ProductDetails({data, cart, setCart}) {
         <div className='w-full flex justify-around mb-[10%]'>
             {otherProducts && otherProducts.map(product => (
                 <Other
+                    key={product.slug}
                     name={product.name}
                     image={product.image.desktop}
                     category={product.category}

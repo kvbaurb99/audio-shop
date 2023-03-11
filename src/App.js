@@ -38,7 +38,7 @@ function App() {
         <Route path="/categories/speakers" element={<Speakers data={data} cart={cart} setCart={setCart} />} />
         <Route path="/categories/earphones" element={<Earphones data={data} cart={cart} setCart={setCart} /> } />
         <Route path="/:category/:name" element={<ProductDetails data={data} cart={cart} setCart={setCart} />} />
-        <Route path="/checkout" element={<Checkout cart={cart} />} />
+        <Route path="/checkout" element={<Checkout cart={cart} setCart={setCart} />} />
       </Routes>
     </BrowserRouter>
   );

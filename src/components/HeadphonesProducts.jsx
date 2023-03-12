@@ -23,7 +23,7 @@ export default function HeadphonesProducts({data}) {
 
 
   return (
-    <div className='w-[60%] mx-auto product'>
+    <div className='md:w-[60%] w-[80%] mx-auto product'>
         {headphones.map(product => (
           <XX99M1
             key={product.name}

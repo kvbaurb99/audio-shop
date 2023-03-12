@@ -85,18 +85,17 @@ export default function ProductDetails({data, cart, setCart}) {
 
 
   return (
-    <div className='w-full'>
+    <div className='w-full overflow-hidden'>
       <NavBar cart={cart} setCart={setCart} />
-      <div className='w-[65%] mx-auto flex justify-around gap-10'>
-        
+      <div className='w-[80%] md:w-[65%] mx-auto flex flex-col md:flex-row justify-around md:gap-10 mt-[10%] md:mt-0'>
         <div>
           {currentProduct.image && (
             <img src={require(`${currentProduct.image.desktop}`)} className='w-[500px]' alt={currentProduct.name} />
           )}
         </div>
-        <div className='w-[500px] flex h-[500px] justify-center flex-col'>
-            <p className='text-5xl tracking-wider font-bold w-[400px]'>{currentProduct.name}</p>
-            <p className='w-[450px] text-black/50 text-sm mt-4 tracking-wide'>{currentProduct.description}</p>
+        <div className='md:w-[500px] flex h-[400px] md:h-[500px] justify-center flex-col'>
+            <p className='md:text-5xl text-4xl tracking-wider font-bold w-[400px]'>{currentProduct.name}</p>
+            <p className='md:w-[450px] text-black/50 text-sm mt-4 tracking-wide text-justify md:text-left'>{currentProduct.description}</p>
             <p className='mt-4 text-lg font-bold'>$ {currentProduct.price}</p>
             <div className='flex justify-around mt-8 items-center'>
                 <div>
@@ -107,17 +106,17 @@ export default function ProductDetails({data, cart, setCart}) {
                     </ul>
                 </div>
                 <div>
-                    <button onClick={() => addProduct(product)} className='bg-[#D87D4A] text-white text-xs px-7 py-3 hover:bg-[#FBAF85]  duration-700'>ADD TO CART</button>
+                    <button onClick={() => addProduct(product)} className='bg-[#D87D4A] text-white text-xs px-10 md:px-7 py-3 hover:bg-[#FBAF85]  duration-700'>ADD TO CART</button>
                 </div>
             </div>
         </div>
       </div>
-      <div className='flex w-[65%] mx-auto justify-around'>
-        <div className='w-[50%]'>
+      <div className='flex w-[65%] flex-col md:flex-row mx-auto justify-around mt-[20%] md:mt-0'>
+        <div className='md:w-[50%]'>
             <p className='text-3xl font-bold tracking-wider'>FEATURES</p>
             <p className='text-black/50 text-sm leading-[1.6] mt-4 tracking-wide'>{currentProduct.features}</p>
         </div>
-        <div>
+        <div className='mt-[35%] md:mt-0'>
             <p className='text-3xl font-bold tracking-wider'>IN THE BOX</p>
             <div className='flex flex-col mt-4'>
             {productInclude && productInclude.map(product => (
@@ -130,7 +129,7 @@ export default function ProductDetails({data, cart, setCart}) {
             </div>
         </div>
       </div>
-      <div className='w-[65%] flex mx-auto justify-center max-h-[600px] gap-5 mt-[10%]'>
+      <div className='md:w-[65%] w-[90%] flex md:flex-row flex-col mx-auto justify-center md:max-h-[600px] gap-5 mt-[10%]'>
                 {currentProduct.gallery && (
                 <div className='flex flex-col gap-[20px]'>
                 <img src={require(`${currentProduct.gallery.first.desktop}`)} className='h-[290px] rounded-lg object-cover'  />
@@ -147,9 +146,9 @@ export default function ProductDetails({data, cart, setCart}) {
       </div>
       <div className='w-[65%] mx-auto'>
         <div className='w-full'>
-            <p className='text-center text-3xl font-bold tracking-wider mt-[10%]'>YOU MAY ALSO LIKE</p>
+            <p className='text-center text-2xl md:text-3xl font-bold tracking-wider mt-[10%]'>YOU MAY ALSO LIKE</p>
         </div>
-        <div className='w-full flex justify-around mb-[10%]'>
+        <div className='w-full flex md:flex-row flex-col items-center md:justify-around mb-[10%]'>
             {otherProducts && otherProducts.map(product => (
                 <Other
                     key={product.slug}

@@ -21,7 +21,7 @@ export default function SpeakersProducts({data}) {
     }, []);
 
   return (
-    <div className='w-[60%] mx-auto product'>
+    <div className='w-[60%] md:w-[60%] mx-auto product'>
     {speakers.map(product => (
       <SpeakerProduct
         key={product.name}

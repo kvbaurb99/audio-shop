@@ -5,7 +5,7 @@ import YX1 from './maininfo/YX1.jsx'
 
 export default function MainInfo() {
   return (
-    <div className='w-[60%] mx-auto relative flex flex-col gap-10'>
+    <div className='md:w-[60%] w-[80%] mx-auto relative flex flex-col gap-10'>
         <ZX9 />
         <ZX7 />
         <YX1 />

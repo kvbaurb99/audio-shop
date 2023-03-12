@@ -7,6 +7,8 @@ import OrderSummary from './OrderSummary';
 
 export default function Checkout({cart, setCart}) {
 
+    console.log(cart)
+
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [phone, setPhone] = useState()
@@ -45,21 +47,21 @@ export default function Checkout({cart, setCart}) {
   return (
     <div className='w-full bg-[#f2f2f2]'>
         <NavBar cart={cart} />
-        <form onSubmit={completeOrder} className='w-[70%] mx-auto mt-[5%] flex gap-5'>
-            <div className='w-[70%] p-6 bg-white'>
+        <form onSubmit={completeOrder} className='md:w-[70%] w-[90%] mx-auto mt-[5%] flex flex-col md:flex-row gap-5'>
+            <div className='md:w-[70%] w-full p-6 bg-white'>
                 <p className='text-3xl font-bold tracking-wider'>CHECKOUT</p>
                 <p className='text-sm text-[#D87D4A] tracking-wider mt-10 font-bold'>BILLING DETAILS</p>
                 <div className='mt-8'>
                     <div className='flex gap-[15px] justify-start w-full flex-wrap'>
-                        <div className='flex flex-col w-[49%]'>
+                        <div className='flex flex-col md:w-[49%] w-full'>
                             <label htmlFor="name" className='font-bold text-sm'>Name</label>
                             <input required type="text" name="" id="name" className='py-3 rounded-lg mt-1 border px-4 border-[#cfcfcf] outline-none' placeholder='Enter your name...' value={name} onChange={(e) => setName(e.target.value)} />
                         </div>
-                        <div className='flex flex-col w-[49%]'>
+                        <div className='flex flex-col md:w-[49%] w-full'>
                             <label htmlFor="email" className='font-bold text-sm'>Email Address</label>
                             <input required type="email" name="email" id="email" className='py-3 rounded-lg mt-1 border px-4 border-[#cfcfcf] outline-none' placeholder='Enter your email...' value={email} onChange={(e) => setEmail(e.target.value)} />
                         </div>
-                        <div className='flex flex-col w-[49%]'>
+                        <div className='flex flex-col md:w-[49%] w-full'>
                             <label htmlFor="phone" className='font-bold text-sm'>Phone Number</label>
                             <input required type="tel" name="phone" id="phone" className='py-3 rounded-lg mt-1 border px-4 border-[#cfcfcf] outline-none' placeholder='Enter your number...' value={phone} onChange={(e) => setPhone(e.target.value)} />
                         </div>
@@ -70,26 +72,26 @@ export default function Checkout({cart, setCart}) {
                             <label htmlFor="address" className='font-bold text-sm'>Address</label>
                             <input required type="text" name="address" id="address" className='py-3 rounded-lg mt-1 border w-full px-4 border-[#cfcfcf] outline-none' placeholder='Enter your address...' value={address} onChange={(e) => setAddress(e.target.value)} />
                         </div>
-                        <div className='flex flex-col w-[49%]'>
+                        <div className='flex flex-col md:w-[49%] w-full'>
                             <label htmlFor="zip" className='font-bold text-sm'>ZIP Code</label>
                             <input required type="text" name="zip" id="zip" className='py-3 rounded-lg mt-1 border px-4 border-[#cfcfcf] outline-none' placeholder='Enter your zip-code...' value={zip} onChange={(e) => setZip(e.target.value)} />
                         </div>
-                        <div className='flex flex-col w-[49%]'>
+                        <div className='flex flex-col md:w-[49%] w-full'>
                             <label htmlFor="city" className='font-bold text-sm'>City</label>
                             <input required type="text" name="city" id="city" className='py-3 rounded-lg mt-1 border px-4 border-[#cfcfcf] outline-none' placeholder='Enter your city...' value={city} onChange={(e) => setCity(e.target.value)} />
                         </div>
                     </div>
                     <p className='mt-6 text-sm text-[#D87D4A] tracking-wider font-bold'>PAYMENT DETAILS</p>
-                    <p className='text-xs font-bold tracking-wider mt-6'>Payment Method</p>
-                    <div className='flex gap-[15px] items-end w-full flex-wrap mt-4 flex-col'>
-                        <div className='flex w-[49%] border-[#cfcfcf] border py-4 px-4 rounded-lg'>
+                    <p className='md:text-xs text-sm font-bold tracking-wider mt-6'>Payment Method</p>
+                    <div className='flex gap-[15px] items-center md:items-end w-full flex-wrap mt-4 flex-col'>
+                        <div className='flex md:w-[49%] w-full border-[#cfcfcf] border py-4 px-4 rounded-lg'>
                             <input required onChange={() => setEmoney(!emoney)} type="radio" name="payment" id="e-money" className='hidden' value="e-money" />
                             <label htmlFor="e-money" className='font-bold text-sm relative flex items-center'>
                                 <span className='checkbox'></span>
                                 <p className='ml-4'>e-Money</p>
                             </label>
                         </div>
-                        <div className='flex w-[49%] border-[#cfcfcf] border py-4 px-4 rounded-lg'>
+                        <div className='flex md:w-[49%] w-full border-[#cfcfcf] border py-4 px-4 rounded-lg'>
                             <input required onChange={() => setEmoney(false)} type="radio" name="payment" id="ondelivery" className='hidden' value="ondelivery" />
                             <label htmlFor="ondelivery" className='font-bold text-sm relative flex items-center'>
                                 <span className='checkbox'></span>
@@ -99,11 +101,11 @@ export default function Checkout({cart, setCart}) {
                     </div>
                     { emoney ? 
                     <div className='flex gap-[15px] justify-start w-full flex-wrap mt-8'>
-                        <div className='flex flex-col w-[49%]'>
+                        <div className='flex flex-col md:w-[49%] w-full'>
                             <label htmlFor="zip" className='font-bold text-sm'>e-Money Number</label>
                             <input required type="text" name="zip" id="zip" className='py-3 rounded-lg mt-1 border px-4 border-[#cfcfcf] outline-none' />
                         </div>
-                        <div className='flex flex-col w-[49%]'>
+                        <div className='flex flex-col md:w-[49%] w-full'>
                             <label htmlFor="city" className='font-bold text-sm'>e-Money PIN</label>
                             <input required type="text" name="city" id="city" className='py-3 rounded-lg mt-1 border px-4 border-[#cfcfcf] outline-none' />
                         </div>            
@@ -112,11 +114,11 @@ export default function Checkout({cart, setCart}) {
                     null
                     }
                     <div className='mt-[8%] w-full justify-start flex'>
-                        <button type='button' onClick={fillForm} className='bg-[#D87D4A] py-3 px-2 text-sm w-[49%] text-white tracking-wider hover:bg-[#FBAF85] duration-700'>FILL WITH EXAMPLE ADDRESS</button>
+                        <button type='button' onClick={fillForm} className='bg-[#D87D4A] py-3 px-2 text-sm w-full md:w-[49%] text-white tracking-wider hover:bg-[#FBAF85] duration-700'>FILL WITH EXAMPLE ADDRESS</button>
                     </div>
                 </div>
             </div>
-            <div className='w-[35%] p-6 bg-white'>
+            <div className='md:w-[35%] w-full p-6 bg-white'>
                 <p className='font-bold text-xl'>SUMMARY</p>
                 <div className='mt-[10%]'>
                     {cart.map(product => (
@@ -129,7 +131,7 @@ export default function Checkout({cart, setCart}) {
                     ))}
                 </div>
                 <div>
-                    <div className='mt-3 flex justify-between'>
+                    <div className='md:mt-3 flex justify-between mt-[15%]'>
                         <p className='text-black/50'>TOTAL</p>
                         {formatted <= 0 ? null : <p className='font-bold text-lg'>$ {formatted}</p>}
                     </div>

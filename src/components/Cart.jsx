@@ -29,13 +29,13 @@ export default function Cart({setShowCart, cart, setCart}) {
 
 
   return (
-    <div className='fixed w-full h-full z-50 top-0 left-0 bg-[#979797]/60 cart' onClick={handleClick}>
-        <div className='w-[380px] h-[490px] bg-white fixed top-[15%] right-[15%] rounded-lg text-black flex flex-col justify-between z-100' onClick={handleCartClick}>
+    <div className='fixed w-full h-full z-50 top-0 left-0 bg-[#979797]/60 cart md:block flex items-center justify-center' onClick={handleClick}>
+        <div className='md:w-[380px] w-[90%] mx-auto md:mx-auto h-[490px] bg-white fixed md:top-[15%] md:right-[15%] rounded-lg text-black flex flex-col justify-between z-100' onClick={handleCartClick}>
             <div className='w-full flex justify-around items-center mt-5'>
                 <p className='text-xl font-bold tracking-wider'>CART ({cart.length})</p>
                 <p onClick={clearCart} className='text-black/50 text-sm cursor-pointer'>Remove all</p>
             </div>
-            <div className='h-full flex flex-col justify-start overflow-y-scroll mt-4'>
+            <div className='h-full mx-auto md:w-full w-[80%] flex flex-col justify-start overflow-y-scroll mt-4'>
                 {cart && cart.map(product => (
                     <CartItem
                         name={product.name}

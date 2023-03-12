@@ -3,6 +3,7 @@ import { AiOutlineShoppingCart } from 'react-icons/ai'
 import { Link, useLocation } from 'react-router-dom'
 import Cart from './Cart'
 import { useEffect } from 'react'
+import { AiOutlineMenu } from 'react-icons/ai'
 
 
 export default function NavBar({cart, setCart}) {
@@ -20,10 +21,13 @@ export default function NavBar({cart, setCart}) {
 
   return (
     <div className='w-full mx-auto h-[100px] text-white flex justify-around items-center border-b border-[#979797]/30 bg-[#141414]'>
+        <div className='block md:hidden'>
+          <AiOutlineMenu className='text-2xl' />
+        </div>
         <div>
             <Link to='/'><p className='font-bold text-2xl hover:animate-pulse hover:text-[#D87D4A]'>audiophile</p></Link>
         </div>
-        <ul className='flex gap-10 text-sm tracking-wider'>
+        <ul className='md:flex hidden gap-10 text-sm tracking-wider'>
             <Link to="/"><li className='hover:text-[#D87D4A] cursor-pointer'>HOME</li></Link>
             <Link to="/categories/headphones"><li className='hover:text-[#D87D4A] cursor-pointer'>HEADPHONES</li></Link>
             <Link to="/categories/speakers"><li className='hover:text-[#D87D4A] cursor-pointer'>SPEAKERS</li></Link>

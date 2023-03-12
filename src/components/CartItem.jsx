@@ -35,13 +35,13 @@ export default function CartItem({ name, price, image, quantity, setCart }) {
       };
 
   return (
-    <div className='flex justify-between items-center mt-4'>
+    <div className='flex justify-around md:justify-between items-center mt-4'>
         <div>
             <img src={require(`${image}`)} className='w-[125px]' />
         </div>
-        <div className='flex flex-col w-full items-start'>
+        <div className='flex flex-col w-full items-start ml-4 md:ml-0'>
             <p className='text-sm font-bold'>{name}</p>
-            <p className='text-sm text-black/50 mt-2 font-bold'>$ {price}</p>
+            <p className='text-sm text-black/50 mt-1 md:mt-2 font-bold'>$ {price}</p>
         </div>
         <div className='flex gap-5 items-center'>
             <p onClick={handleDecreaseQuantity} className='bg-[#f1f1f1] cursor-pointer'>-</p>

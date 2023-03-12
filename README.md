@@ -21,6 +21,7 @@ npm run start
 - Checkout summary after completed order purchase
 - Interactive design
 - Modifying quantity of items in cart or on product page
+- Responsive design for mobile devices
 
 ## Live demo
 

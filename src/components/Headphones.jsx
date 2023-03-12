@@ -8,7 +8,7 @@ import MainCategories from './MainCategories'
 
 export default function Headphones({data, cart, setCart}) {
   return (
-    <div className='w-full'>
+    <div className='w-full overflow-hidden'>
         <HeadphonesHero cart={cart} setCart={setCart} />
         <HeadphonesProducts data={data} />
         <MainCategories />

@@ -4,15 +4,21 @@ import { Link, useLocation } from 'react-router-dom'
 import Cart from './Cart'
 import { useEffect } from 'react'
 import { AiOutlineMenu } from 'react-icons/ai'
+import MobileMenu from './MobileMenu'
 
 
 export default function NavBar({cart, setCart}) {
 
   const [showCart, setShowCart] = useState(false)
   const location = useLocation()
+  const [showMenu, setShowMenu] = useState(false)
 
   const handleCart = () => {
     setShowCart(true)
+  }
+
+  const handleMenu = () => {
+    setShowMenu(!showMenu)
   }
 
   useEffect(() => {
@@ -20,8 +26,8 @@ export default function NavBar({cart, setCart}) {
   }, [location]);
 
   return (
-    <div className='w-full mx-auto h-[100px] text-white flex justify-around items-center border-b border-[#979797]/30 bg-[#141414]'>
-        <div className='block md:hidden'>
+    <div className='relative w-full mx-auto h-[100px] text-white flex justify-around items-center border-b border-[#979797]/30 bg-[#141414]'>
+        <div onClick={handleMenu} className='block md:hidden'>
           <AiOutlineMenu className='text-2xl' />
         </div>
         <div>
@@ -41,6 +47,7 @@ export default function NavBar({cart, setCart}) {
         <Cart setShowCart={setShowCart} cart={cart} setCart={setCart} />
         : null
         }
+        {showMenu ? <MobileMenu /> : null}
     </div>
   )
 }

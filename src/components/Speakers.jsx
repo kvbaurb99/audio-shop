@@ -7,7 +7,7 @@ import SpeakersProducts from './SpeakersProducts'
 
 export default function Speakers({data, cart, setCart}) {
   return (
-    <div className='w-full'>
+    <div className='w-full overflow-hidden'>
         <SpeakersHero cart={cart} setCart={setCart} />
         <SpeakersProducts data={data} />
         <MainCategories />

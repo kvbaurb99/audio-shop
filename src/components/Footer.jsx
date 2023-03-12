@@ -15,7 +15,7 @@ export default function Footer() {
         <div className='h-full flex flex-col justify-around md:justify-center md:ml-[15%]'>
             <div className='flex md:flex-row flex-col items-center w-full md:justify-between md:mt-0'>
                 <div>
-                    <p className='text-2xl font-bold tracking-wide'>audiophile</p>
+                    <Link to='/'><p className='font-bold tracking-wider text-2xl hover:animate-pulse hover:text-[#D87D4A]'>audiophile</p></Link>
                 </div>
                 <div className='md:mr-[15%] mt-[15%] md:mt-0'>
                     <ul className='flex md:flex-row flex-col md:w-auto w-full items-center text-sm gap-7 tracking-widest'>

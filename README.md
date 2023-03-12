@@ -25,7 +25,7 @@ npm run start
 
 ## Live demo
 
-https://audiophile-react.netlify.app/
+https://audiophile-kvbaur99.netlify.app/
 
 ## In progress
 

@@ -15,7 +15,7 @@ export default function XX99M1({name, description, image, category, slug}) {
         <div className='md:w-[50%]'>
           <img src={require(`${image}`)} className="w-[350px] h-[300px] md:h-auto md:block hidden" />
         </div>
-        <div className='md:w-[50%] md:hidden'>
+        <div className='md:w-[50%] md:hidden w-[50%] mx-auto'>
           <img src={require(`${image}`)} className="md:w-[350px] h-[300px] object-cover" />
         </div>
         <div className='md:w-[50%] md:block flex flex-col items-center'>
@@ -27,7 +27,7 @@ export default function XX99M1({name, description, image, category, slug}) {
   </>
     :
     <>
-      <div className='md:w-[50%] md:hidden'>
+      <div className='md:w-[50%] md:hidden w-[50%] mx-auto'>
         <img src={require(`${image}`)} className="md:w-[350px] h-[300px] md:h-[350px] object-cover" />
       </div>
       <div className='md:w-[50%] md:block flex flex-col items-center'>

@@ -16,7 +16,7 @@ export default function OrderSummary({cart, total, setCart, orderCompleted}) {
 
   return (
     <div className='w-full h-full fixed bg-[#979797]/60 top-0 left-0 flex justify-center items-center'>
-        <div className='bg-white rounded-lg w-[90%] md:w-[28%] h-[65%] md:h-[60%] p-[8%] md:p-[3%] summary'>
+        <div className='bg-white rounded-lg w-[90%] md:w-[28%] h-[80%] md:h-[60%] p-[8%] md:p-[3%] summary'>
             <div className='w-[60px] h-[60px] bg-[#D87D4A] rounded-full flex justify-center items-center'>
                 <AiOutlineCheck className='text-3xl text-white' />
             </div>
@@ -45,8 +45,8 @@ export default function OrderSummary({cart, total, setCart, orderCompleted}) {
                     </div>
                     }
                 </div>
-                <div className='md:w-[45%] h-[400px] md:h-auto w-full bg-black rounded-bl-lg md:rounded-bl-none md:rounded-tr-lg rounded-br-lg flex flex-col md:justify-center items-center'>
-                    <div className='md:block w-full flex flex-col items-start justify-center h-full md:h-auto ml-[25%] '>
+                <div className='md:w-[45%] h-[120px] md:h-auto w-full bg-black rounded-bl-lg md:rounded-bl-none md:rounded-tr-lg rounded-br-lg flex flex-col justify-center items-center'>
+                    <div className='md:block w-full flex flex-col items-start justify-center md:h-auto ml-[25%] '>
                         <p className='text-white/50'>GRAND TOTAL</p>
                         <p className='text-white font-bold mt-2'>$ {total}</p>
                     </div>       

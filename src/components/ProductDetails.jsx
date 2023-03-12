@@ -94,7 +94,7 @@ export default function ProductDetails({data, cart, setCart}) {
           )}
         </div>
         <div className='md:w-[500px] flex h-[400px] md:h-[500px] justify-center flex-col'>
-            <p className='md:text-5xl text-4xl tracking-wider font-bold w-[400px]'>{currentProduct.name}</p>
+            <p className='md:text-5xl text-4xl tracking-wider font-bold w-[80%] md:w-[400px]'>{currentProduct.name}</p>
             <p className='md:w-[450px] text-black/50 text-sm mt-4 tracking-wide text-justify md:text-left'>{currentProduct.description}</p>
             <p className='mt-4 text-lg font-bold'>$ {currentProduct.price}</p>
             <div className='flex justify-around mt-8 items-center'>

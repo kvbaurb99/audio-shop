@@ -31,7 +31,7 @@ export default function NavBar({cart, setCart}) {
           <AiOutlineMenu className='text-2xl' />
         </div>
         <div>
-            <Link to='/'><p className='font-bold text-2xl hover:animate-pulse hover:text-[#D87D4A]'>audiophile</p></Link>
+            <Link to='/'><p className='font-bold text-2xl hover:animate-pulse hover:text-[#D87D4A] tracking-wider'>audiophile</p></Link>
         </div>
         <ul className='md:flex hidden gap-10 text-sm tracking-wider'>
             <Link to="/"><li className='hover:text-[#D87D4A] cursor-pointer'>HOME</li></Link>

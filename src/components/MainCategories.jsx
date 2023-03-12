@@ -30,7 +30,7 @@ export default function MainCategories() {
 
   return (
     <div className='w-[70%] mt-[25%] md:h-[400px] mx-auto flex flex-col md:flex-row items-center justify-between text-sm font-bold md:mt-5'>
-        <div className='flex flex-col items-center bg-[#f1f1f1] w-[350px] first mt-8 md:mt-0'>
+        <div className='flex flex-col items-center w-[350px] first mt-8 md:mt-0'>
             <img src={Headphones} className='w-[200px]' />
             <p>HEADPHONES</p>
             <div className='flex items-center gap-1 mt-2'>
@@ -38,7 +38,7 @@ export default function MainCategories() {
                 <IoIosArrowForward className='text-[#D87D4A]' />
             </div>
         </div>
-        <div className='flex flex-col items-center bg-[#f1f1f1] w-[350px] second mt-8 md:mt-0'>
+        <div className='flex flex-col items-center w-[350px] second mt-8 md:mt-0'>
             <img src={Speakers} className='w-[200px]' />
             <p>SPEAKERS</p>
             <div className='flex items-center gap-1 mt-2'>
@@ -46,7 +46,7 @@ export default function MainCategories() {
                 <IoIosArrowForward className='text-[#D87D4A]' />
             </div>
         </div>
-        <div className='flex flex-col items-center bg-[#f1f1f1] w-[350px] third mt-8 md:mt-0'>
+        <div className='flex flex-col items-center w-[350px] third mt-8 md:mt-0'>
             <img src={Earphones} className='w-[200px]' />
             <p>EARPHONES</p>
             <div className='flex items-center gap-1 mt-2'>

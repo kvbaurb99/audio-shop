@@ -44,9 +44,9 @@ export default function CartItem({ name, price, image, quantity, setCart }) {
             <p className='text-sm text-black/50 mt-1 md:mt-2 font-bold'>$ {price}</p>
         </div>
         <div className='flex gap-5 items-center'>
-            <p onClick={handleDecreaseQuantity} className='bg-[#f1f1f1] cursor-pointer'>-</p>
+            <p onClick={handleDecreaseQuantity} className='bg-white cursor-pointer'>-</p>
             <p className='font-bold text-sm'>{quantity}</p>
-            <p onClick={handleIncreaseQuantity} className='bg-[#f1f1f1] cursor-pointer'>+</p>
+            <p onClick={handleIncreaseQuantity} className='bg-white cursor-pointer'>+</p>
         </div>
     </div>
   )

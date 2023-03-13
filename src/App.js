@@ -10,6 +10,7 @@ import ProductDetails from "./components/ProductDetails";
 import { useState } from "react";
 import Checkout from "./components/Checkout";
 import { useEffect } from "react";
+import UserOrders from "./components/UserOrders";
 
 
 
@@ -24,6 +25,17 @@ function App() {
     localStorage.setItem('cart', JSON.stringify(cart));
   }, [cart]);
 
+  const [usernameReg, setUsernameReg] = useState('')
+  const [passwordReg, setPasswordReg] = useState('')
+  const [username, setUsername] = useState(localStorage.getItem('username') || '')
+  const [password, setPassword] = useState('')
+  const authData = JSON.parse(localStorage.getItem('authData') || null);
+
+  useEffect(() => {
+    // store username in local storage
+    localStorage.setItem('username', username);
+  }, [username]);
+
 
 
 
@@ -33,12 +45,13 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home cart={cart} setCart={setCart} />} />
-        <Route path="/categories/headphones" element={<Headphones data={data} cart={cart} setCart={setCart} />} />
-        <Route path="/categories/speakers" element={<Speakers data={data} cart={cart} setCart={setCart} />} />
-        <Route path="/categories/earphones" element={<Earphones data={data} cart={cart} setCart={setCart} /> } />
-        <Route path="/:category/:name" element={<ProductDetails data={data} cart={cart} setCart={setCart} />} />
-        <Route path="/checkout" element={<Checkout cart={cart} setCart={setCart} />} />
+        <Route path="/" element={<Home cart={cart} setCart={setCart} setUsernameReg={setUsernameReg} setPasswordReg={setPasswordReg} usernameReg={usernameReg} passwordReg={passwordReg} username={username} password={password} setPassword={setPassword} setUsername={setUsername} authData={authData} />} />
+        <Route path="/categories/headphones" element={<Headphones data={data} cart={cart} setCart={setCart} setUsernameReg={setUsernameReg} setPasswordReg={setPasswordReg} usernameReg={usernameReg} passwordReg={passwordReg} username={username} password={password} setPassword={setPassword} setUsername={setUsername} authData={authData} />} />
+        <Route path="/categories/speakers" element={<Speakers data={data} cart={cart} setCart={setCart} setUsernameReg={setUsernameReg} setPasswordReg={setPasswordReg} usernameReg={usernameReg} passwordReg={passwordReg} username={username} password={password} setPassword={setPassword} setUsername={setUsername} authData={authData} />} />
+        <Route path="/categories/earphones" element={<Earphones data={data} cart={cart} setCart={setCart} setUsernameReg={setUsernameReg} setPasswordReg={setPasswordReg} usernameReg={usernameReg} passwordReg={passwordReg} username={username} password={password} setPassword={setPassword} setUsername={setUsername} authData={authData} /> } />
+        <Route path="/:category/:name" element={<ProductDetails data={data} cart={cart} setCart={setCart} setUsernameReg={setUsernameReg} setPasswordReg={setPasswordReg} usernameReg={usernameReg} passwordReg={passwordReg} username={username} password={password} setPassword={setPassword} setUsername={setUsername} authData={authData} />} />
+        <Route path="/checkout" element={<Checkout cart={cart} setCart={setCart} setUsernameReg={setUsernameReg} setPasswordReg={setPasswordReg} usernameReg={usernameReg} passwordReg={passwordReg} username={username} password={password} setPassword={setPassword} setUsername={setUsername} authData={authData} />} />
+        <Route path="/:username/orders" element={<UserOrders username={username} setUsernameReg={setUsernameReg} setPasswordReg={setPasswordReg} usernameReg={usernameReg} passwordReg={passwordReg} password={password} setPassword={setPassword} setUsername={setUsername} authData={authData} cart={cart} setCart={setCart} />} />
       </Routes>
     </BrowserRouter>
   );

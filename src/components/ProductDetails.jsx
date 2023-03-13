@@ -7,7 +7,7 @@ import MainCategories from './MainCategories';
 import NavBar from './NavBar';
 import Other from './Other';
 
-export default function ProductDetails({data, cart, setCart}) {
+export default function ProductDetails({data, cart, setCart, username, usernameReg, passwordReg, authData, password, setUsername, setPassword, setUsernameReg, setPasswordReg}) {
   const [currentProduct, setCurrentProduct] = useState({});
   const [productInclude, setProductInclude] = useState([]);
   const [otherProducts, setOtherProducts] = useState([])
@@ -86,7 +86,7 @@ export default function ProductDetails({data, cart, setCart}) {
 
   return (
     <div className='w-full overflow-hidden'>
-      <NavBar cart={cart} setCart={setCart} />
+      <NavBar cart={cart} setCart={setCart} setUsernameReg={setUsernameReg} setPasswordReg={setPasswordReg} usernameReg={usernameReg} passwordReg={passwordReg} username={username} password={password} setPassword={setPassword} setUsername={setUsername} authData={authData} />
       <div className='w-[80%] md:w-[65%] mx-auto flex flex-col md:flex-row justify-around md:gap-10 mt-[10%] md:mt-0'>
         <div>
           {currentProduct.image && (

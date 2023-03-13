@@ -1,6 +1,6 @@
 # Audiophile React Shop
 
-Fictional audio shop
+Full-stack Audio Shop 
 
 ## Features
 

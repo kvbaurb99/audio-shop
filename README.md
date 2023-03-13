@@ -12,18 +12,19 @@ Fictional audio shop
 - Interactive design
 - Modifying quantity of items in cart or on product page
 - Responsive design for mobile devices
+- Creating and logging in to account
+- When user is logged in you can check your orders in section 'Your Orders' in navigation bar
 
 ## Live demo
 
 https://audiophile-kvbaur99.netlify.app/
-
-## In progress
-
-- Database for creating users and storing their orders and address informations
 
 ## Technologies
 
 - ReactJS
 - Tailwind CSS
 - HTML5
+- Rest API with axios
+- NodeJS with Express
+- MySQL database
 

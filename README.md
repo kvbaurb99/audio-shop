@@ -2,16 +2,6 @@
 
 Fictional audio shop
 
-## Download and run locally
-
-```javascript
-git clone git@github.com:kvbaurb99/audio-shop.git
-
-cd audio-shop
-
-npm run start
-```
-
 ## Features
 
 - Switching between products categories (headphones, speakers, earphones)

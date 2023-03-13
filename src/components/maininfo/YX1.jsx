@@ -6,7 +6,7 @@ export default function YX1() {
   return (
     <div className='w-full flex gap-5 flex-col md:flex-row'>
         <div className='md:w-[50%] w-full h-[300px]'>
-            <img src={Earphones} className='h-full w-full rounded-lg object-cover md:object-none' />
+            <img src={Earphones} className='h-full w-full rounded-lg object-cover md:object-none' alt='product' />
         </div>
         <div className='w-[50%] h-[200px] md:h-[300px] flex items-center'>
             <div className='px-[15%]'>

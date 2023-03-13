@@ -13,10 +13,10 @@ export default function XX99M1({name, description, image, category, slug}) {
     { name === 'XX99 Mark I Headphones' ?
         <>
         <div className='md:w-[50%]'>
-          <img src={require(`${image}`)} className="w-[350px] h-[300px] md:h-auto md:block hidden" />
+          <img src={require(`${image}`)} className="w-[350px] h-[300px] md:h-auto md:block hidden" alt='product' />
         </div>
         <div className='md:w-[50%] md:hidden w-full mx-auto'>
-          <img src={require(`${image}`)} className="md:w-[350px] w-[300px] mx-auto h-[300px] object-cover" />
+          <img src={require(`${image}`)} className="md:w-[350px] w-[300px] mx-auto h-[300px] object-cover" alt='product' />
         </div>
         <div className='md:w-[50%] md:block flex flex-col items-center'>
           {name === 'XX99 Mark II Headphones' ? <p className='tracking-widest text-[#D87D4A] md:mt-0 mt-[10%]'>NEW PRODUCT</p> : null}
@@ -28,7 +28,7 @@ export default function XX99M1({name, description, image, category, slug}) {
     :
     <>
       <div className='md:w-[50%] md:hidden w-full mx-auto'>
-        <img src={require(`${image}`)} className="md:w-[350px] w-[300px] mx-auto h-[300px] md:h-[350px] object-cover" />
+        <img src={require(`${image}`)} className="md:w-[350px] w-[300px] mx-auto h-[300px] md:h-[350px] object-cover" alt='product' />
       </div>
       <div className='md:w-[50%] md:block flex flex-col items-center'>
         {name === 'XX99 Mark II Headphones' ? <p className='tracking-widest text-[#D87D4A]'>NEW PRODUCT</p> : null}
@@ -37,7 +37,7 @@ export default function XX99M1({name, description, image, category, slug}) {
         <Link to={`/${category}/${slug}`}><button className='bg-[#D87D4A] text-xs px-3 w-[150px] py-3 text-white md:mt-4 hover:bg-[#FBAF85] duration-700 mt-[15%]'>SEE NOW</button></Link>
       </div>
       <div className='md:w-[50%]'>
-        <img src={require(`${image}`)} className="w-[350px] md:block hidden" />
+        <img src={require(`${image}`)} className="w-[350px] md:block hidden" alt='product' />
       </div>
 </>
     }

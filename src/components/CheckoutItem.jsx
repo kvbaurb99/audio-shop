@@ -4,7 +4,7 @@ export default function CheckoutItem({image, name, price, quantity}) {
   return (
     <div className='flex justify-between items-center'>
         <div>
-            <img src={require(`${image}`)} className='w-[100px]' />
+            <img src={require(`${image}`)} className='w-[100px]' alt='product' />
         </div>
         <div className='flex flex-col w-full items-start ml-4'>
             <div className='flex w-full justify-between'>

@@ -5,7 +5,7 @@ export default function EarphoneProduct({name, description, image, category, slu
   return (
     <div className='w-full md:h-[500px] flex flex-col md:flex-row md:items-center md:justify-around mt-[20%] md:mt-10'>
       <div className='w-full md:hidden block mx-auto'>
-        <img src={require(`${image}`)} className="md:w-[350px] w-[300px] mx-auto h-[300px] object-cover" />
+        <img src={require(`${image}`)} className="md:w-[350px] w-[300px] mx-auto h-[300px] object-cover" alt='product' />
       </div>
       <div className='md:w-[50%] md:block flex flex-col items-center'>
         <p className='tracking-widest text-[#D87D4A] mt-[10%] md:mt-0'>NEW PRODUCT</p>
@@ -14,7 +14,7 @@ export default function EarphoneProduct({name, description, image, category, slu
         <Link to={`/${category}/${slug}`}><button className='bg-[#D87D4A] text-xs px-10 py-3 text-white mt-4 hover:bg-[#FBAF85] duration-700'>SEE NOW</button></Link>
       </div>
       <div className='w-[50%] hidden md:block'>
-        <img src={require(`${image}`)} className="w-[350px]" />
+        <img src={require(`${image}`)} className="w-[350px]" alt='product' />
       </div>
     </div>
   )

@@ -37,7 +37,7 @@ export default function CartItem({ name, price, image, quantity, setCart }) {
   return (
     <div className='flex justify-around md:justify-between items-center mt-4'>
         <div>
-            <img src={require(`${image}`)} className='w-[125px]' />
+            <img src={require(`${image}`)} className='w-[125px]' alt='product' />
         </div>
         <div className='flex flex-col w-full items-start ml-4 md:ml-0'>
             <p className='text-sm font-bold'>{name}</p>

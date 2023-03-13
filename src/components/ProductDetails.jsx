@@ -132,13 +132,13 @@ export default function ProductDetails({data, cart, setCart, username, usernameR
       <div className='md:w-[65%] w-[90%] flex md:flex-row flex-col mx-auto justify-center md:max-h-[600px] gap-5 mt-[10%]'>
                 {currentProduct.gallery && (
                 <div className='flex flex-col gap-[20px]'>
-                <img src={require(`${currentProduct.gallery.first.desktop}`)} className='h-[290px] rounded-lg object-cover'  />
-                <img src={require(`${currentProduct.gallery.second.desktop}`)} className='h-[290px] rounded-lg object-cover' />
+                <img src={require(`${currentProduct.gallery.first.desktop}`)} className='h-[290px] rounded-lg object-cover' alt='product' />
+                <img src={require(`${currentProduct.gallery.second.desktop}`)} className='h-[290px] rounded-lg object-cover' alt='product' />
                 </div>
                 )}
             <div>
                 {currentProduct.gallery && (
-                    <img src={require(`${currentProduct.gallery.third.desktop}`)} className='h-[600px] rounded-lg object-cover' />
+                    <img src={require(`${currentProduct.gallery.third.desktop}`)} className='h-[600px] rounded-lg object-cover' alt='product' />
                 )}
             </div>
         </div>

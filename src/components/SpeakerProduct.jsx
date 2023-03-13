@@ -7,7 +7,7 @@ export default function SpeakerProduct({name, image, description, category, slug
         { name === 'ZX9 Speaker' ? 
         <>
         <div className='md:w-[50%]'>
-            <img src={require(`${image}`)} className="md:w-[350px] h-[300px] object-cover" />
+            <img src={require(`${image}`)} className="md:w-[350px] h-[300px] object-cover" alt='product' />
         </div>
       <div className='md:w-[50%] md:block flex flex-col items-center'>
         <p className='tracking-widest text-[#D87D4A] md:mt-0 mt-[10%]'>NEW PRODUCT</p>
@@ -19,7 +19,7 @@ export default function SpeakerProduct({name, image, description, category, slug
       :
       <>
       <div className='md:w-[50%] md:hidden block'>
-        <img src={require(`${image}`)} className="md:w-[350px] h-[300px] object-cover" />
+        <img src={require(`${image}`)} className="md:w-[350px] h-[300px] object-cover" alt='product' />
       </div>
       <div className='md:w-[50%] md:block flex flex-col items-center'>
       <p className='font-bold text-3xl md:text-5xl md:w-[300px] tracking-wider mt-4 text-center md:text-left'>{name}</p>
@@ -27,7 +27,7 @@ export default function SpeakerProduct({name, image, description, category, slug
       <Link to={`/${category}/${slug}`}><button className='bg-[#D87D4A] text-xs px-3 w-[150px] py-3 text-white md:mt-4 hover:bg-[#FBAF85] duration-700 mt-[15%]'>SEE NOW</button></Link>
     </div>
     <div className='w-[50%] md:block hidden'>
-      <img src={require(`${image}`)} className="w-[350px]" />
+      <img src={require(`${image}`)} className="w-[350px]" alt='product' />
     </div>
     </>
         }

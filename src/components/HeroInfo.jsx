@@ -26,7 +26,7 @@ export default function HeroInfo() {
             <Link to='/headphones/xx99-mark-two-headphones'><button className='bg-[#D87D4A] mt-8 md:mt-4 px-6 md:px-12 py-3 text-sm hover:bg-[#FBAF85]  duration-700'>SEE PRODUCT</button></Link>
         </div>
         <div className='absolute right-[10%] opacity-80 image'>
-            <img src="https://d287ku8w5owj51.cloudfront.net/images/products/hero/creative-outlier-black/pdt-mhl-creative-outlier-black-mobile.png?width=750" className='w-[400px] animate-pulse md:block hidden' />
+            <img src="https://d287ku8w5owj51.cloudfront.net/images/products/hero/creative-outlier-black/pdt-mhl-creative-outlier-black-mobile.png?width=750" className='w-[400px] animate-pulse md:block hidden' alt='hero-photo' />
         </div>    
     </div>
   )

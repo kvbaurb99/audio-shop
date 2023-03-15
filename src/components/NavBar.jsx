@@ -12,7 +12,6 @@ import Authentication from './Authentication'
 export default function NavBar({cart, setCart, setUsernameReg, setPasswordReg, usernameReg, passwordReg, username, password, setUsername, setPassword, authData}) {
 
   const [showCart, setShowCart] = useState(false)
-  const location = useLocation()
   const [showMenu, setShowMenu] = useState(false)
   const [showAuthentication, setShowAuthentication] = useState(false)
 
@@ -35,7 +34,7 @@ export default function NavBar({cart, setCart, setUsernameReg, setPasswordReg, u
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top of page
-  }, [location]);
+  }, []);
 
   return (
     <div className='relative w-full mx-auto h-[100px] text-white flex justify-around items-center border-b border-[#979797]/30 bg-[#141414]'>

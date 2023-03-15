@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { AiOutlineShoppingCart } from 'react-icons/ai'
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Cart from './Cart'
 import { useEffect } from 'react'
 import { AiOutlineMenu } from 'react-icons/ai'
@@ -55,7 +55,7 @@ export default function NavBar({cart, setCart, setUsernameReg, setPasswordReg, u
             <div className='relative'>
               {authData && authData.isLoggedIn ? <AiOutlineLogout onClick={handleLogOut} className='text-2xl cursor-pointer hover:text-[#D87D4A]' /> : <AiOutlineUser onClick={() => setShowAuthentication(!showAuthentication)} className='text-2xl cursor-pointer hover:text-[#D87D4A]' />}
               <div className='absolute z-50 top-[60px] right-0'>
-                {showAuthentication ? <Authentication setPasswordReg={setPasswordReg} setUsernameReg={setUsernameReg} usernameReg={usernameReg} passwordReg={passwordReg} username={username} password={password} setUsername={setUsername} setPassword={setPassword} /> : null}
+                {showAuthentication ? <Authentication setPasswordReg={setPasswordReg} setUsernameReg={setUsernameReg} usernameReg={usernameReg} passwordReg={passwordReg} username={username} password={password} setUsername={setUsername} setPassword={setPassword} setShowCart={setShowCart} /> : null}
               </div>
             </div>
             <div className='relative'>

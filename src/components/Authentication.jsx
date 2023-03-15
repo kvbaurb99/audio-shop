@@ -22,11 +22,15 @@ export default function Authentication({setUsernameReg, setPasswordReg, username
                 return;
             } else {
                 showForm('login')
+                setUsernameReg('')
+                setPasswordReg('')
             }
         }).catch(err => {
             console.log(err);
         });
     }
+
+    
 
     
 
@@ -41,7 +45,8 @@ export default function Authentication({setUsernameReg, setPasswordReg, username
                 const authData = { isLoggedIn: true, user: username };
                 localStorage.setItem('authData', JSON.stringify(authData));
                 window.location.reload()
-                console.log(res.data.message)          
+                setUsername('')
+                setPassword('')         
             } else if (username === '' || password === '') {
                 setLoginError('Username or password is required');
                 setTimeout(() => {
@@ -58,7 +63,7 @@ export default function Authentication({setUsernameReg, setPasswordReg, username
 
 
   return (
-    <div className='w-[320px] h-[220px] bg-white text-black p-4 rounded'>
+    <div className='md:w-[320px] w-[250px] md:h-[220px] bg-white text-black p-4 rounded'>
         { form === 'register' ? 
         <>
         {registerError ? <p className='text-xs font-bold text-red-600'>{registerError}</p> : <p className='font-bold tracking-widest'>CREATE ACCOUNT</p>}
